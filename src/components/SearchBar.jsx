@@ -1,3 +1,5 @@
+import { Search } from "lucide-react";
+
 function SearchBar({ onSearch }) {
   const handleSearch = (event) => {
     if (onSearch) {
@@ -7,7 +9,7 @@ function SearchBar({ onSearch }) {
 
   return (
     <label className="flex w-full max-w-md items-center gap-2 rounded-full border border-white/10 bg-slate-900/70 px-4 py-2.5 text-sm text-slate-300 shadow-inner shadow-violet-500/10 transition focus-within:border-violet-400/60 focus-within:ring-2 focus-within:ring-violet-500/20">
-      <span className="text-slate-400">⌕</span>
+      <Search className="h-4 w-4 text-slate-400" />
       <input
         type="text"
         placeholder="Search"

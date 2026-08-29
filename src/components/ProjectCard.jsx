@@ -1,4 +1,7 @@
-function ProjectCard({ project }) {
+import { Link } from "react-router-dom";
+import { Trash2 } from "lucide-react";
+
+function ProjectCard({ project, onDelete }) {
   const totalTasks = project.tasks.length;
   const completedTasks = project.tasks.filter((task) => task.completed).length;
   const progress =
@@ -24,11 +27,28 @@ function ProjectCard({ project }) {
         />
       </div>
 
-      <div className="flex items-center justify-between text-sm text-slate-400">
+      <div className="flex items-center justify-between gap-3 text-sm text-slate-400">
         <span>
           {completedTasks} / {totalTasks} tasks
         </span>
         <span>Active</span>
+      </div>
+
+      <div className="mt-4 flex items-center gap-2">
+        <Link
+          to={`/projects/${project.id}`}
+          className="flex-1 rounded-xl bg-violet-500/15 px-3 py-2 text-center font-medium text-violet-200 transition hover:bg-violet-500/25"
+        >
+          Open project
+        </Link>
+        <button
+          type="button"
+          onClick={() => onDelete(project.id)}
+          className="flex h-10 w-10 items-center justify-center rounded-xl border border-red-500/30 bg-red-500/10 text-red-200 transition hover:bg-red-500/20"
+          aria-label={`Delete ${project.name}`}
+        >
+          <Trash2 className="h-4 w-4" />
+        </button>
       </div>
     </article>
   );

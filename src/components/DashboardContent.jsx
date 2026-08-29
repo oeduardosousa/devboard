@@ -1,7 +1,7 @@
 import SummaryCard from "./SummaryCard";
 import ProjectCard from "./ProjectCard";
 
-function DashboardContent({ projects, search }) {
+function DashboardContent({ projects, search, onDeleteProject }) {
   const filteredProjects = (projects || []).filter((project) =>
     project.name.toLowerCase().includes(search.toLowerCase()),
   );
@@ -45,7 +45,11 @@ function DashboardContent({ projects, search }) {
         <div className="grid gap-5 lg:grid-cols-2">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onDelete={onDeleteProject}
+              />
             ))
           ) : (
             <div className="rounded-3xl border border-dashed border-white/15 bg-slate-900/60 p-10 text-center text-slate-300 lg:col-span-2">

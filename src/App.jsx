@@ -10,6 +10,12 @@ function App() {
   const [projects, setProjects] = useState([]);
   const [search, setSearch] = useState("");
 
+  const handleDeleteProject = (projectId) => {
+    setProjects((currentProjects) =>
+      currentProjects.filter((project) => project.id !== projectId),
+    );
+  };
+
   return (
     <div className="min-h-screen bg-[#020814] text-slate-100">
       <BrowserRouter>
@@ -21,6 +27,7 @@ function App() {
                 projects={projects}
                 search={search}
                 onSearch={setSearch}
+                onDeleteProject={handleDeleteProject}
               />
             }
           />

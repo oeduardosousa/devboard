@@ -12,7 +12,7 @@ function Header({ onSearch }) {
             type="button"
             className="text-xl font-semibold tracking-tight text-white"
           >
-            Dev<span className="text-fuchsia-400">Nova</span>
+            Dev<span className="text-fuchsia-400">Board</span>
           </button>
         </div>
 
