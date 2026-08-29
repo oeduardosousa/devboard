@@ -1,15 +1,31 @@
 import SearchBar from "./SearchBar";
 
-function Header({ onHomeClick, onSearch }) {
+function Header({ onSearch }) {
   return (
-    <header>
-      <div>
-        <button type="button" onClick={onHomeClick}>
-          Dev<span>Board</span>
-        </button>
-      </div>
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-fuchsia-500 to-violet-500 text-lg font-black text-white shadow-[0_0_30px_rgba(168,85,247,0.8)]">
+            D
+          </div>
+          <button
+            type="button"
+            className="text-xl font-semibold tracking-tight text-white"
+          >
+            Dev<span className="text-fuchsia-400">Nova</span>
+          </button>
+        </div>
 
-      <SearchBar onSearch={onSearch} />
+        <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
+          <span className="text-white">Guide</span>
+          <span>Config</span>
+          <span>Plugins</span>
+          <span>Resources</span>
+          <span>Version</span>
+        </nav>
+
+        <SearchBar onSearch={onSearch} />
+      </div>
     </header>
   );
 }

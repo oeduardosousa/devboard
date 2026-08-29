@@ -1,7 +1,62 @@
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Dashboard from "./pages/Dashboard";
+import Projects from "./pages/Projects";
+import ProjectDetails from "./pages/ProjectDetails";
+import Tasks from "./pages/Tasks";
 
 function App() {
-  return <Dashboard />;
+  const [projects, setProjects] = useState([]);
+  const [search, setSearch] = useState("");
+
+  return (
+    <div className="min-h-screen bg-[#020814] text-slate-100">
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Dashboard
+                projects={projects}
+                search={search}
+                onSearch={setSearch}
+              />
+            }
+          />
+
+          <Route
+            path="/projects"
+            element={
+              <Projects
+                projects={projects}
+                setProjects={setProjects}
+                search={search}
+              />
+            }
+          />
+
+          <Route
+            path="/projects/:id"
+            element={
+              <ProjectDetails projects={projects} setProjects={setProjects} />
+            }
+          />
+
+          <Route
+            path="/tasks"
+            element={
+              <Tasks
+                projects={projects}
+                setProjects={setProjects}
+                search={search}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
