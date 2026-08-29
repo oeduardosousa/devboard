@@ -19,7 +19,7 @@ function ProjectCard({ project }) {
 
       <div className="mb-3 h-2 overflow-hidden rounded-full bg-slate-800">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500"
+          className="h-full rounded-full bg-linear-to-r from-violet-500 to-fuchsia-500"
           style={{ width: `${progress}%` }}
         />
       </div>

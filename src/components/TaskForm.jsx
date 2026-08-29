@@ -35,7 +35,7 @@ function TaskForm({ onCreateTask }) {
 
       <button
         type="submit"
-        className="rounded-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 px-5 py-3 font-semibold text-white shadow-[0_0_25px_rgba(168,85,247,0.5)] transition hover:opacity-95"
+        className="rounded-2xl bg-linear-to-r from-violet-500 to-fuchsia-500 px-5 py-3 font-semibold text-white shadow-[0_0_25px_rgba(168,85,247,0.5)] transition hover:opacity-95"
       >
         Add task
       </button>

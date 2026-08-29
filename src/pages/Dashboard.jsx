@@ -5,10 +5,10 @@ import Footer from "../components/Footer";
 
 function Dashboard({ projects, search, onSearch }) {
   return (
-    <div className="min-h-screen bg-[#020814] text-slate-100">
+    <div className="flex min-h-screen flex-col bg-[#020814] text-slate-100">
       <Header onSearch={onSearch} />
 
-      <div className="mx-auto flex w-full max-w-[1500px] flex-1 gap-6 px-4 py-6 sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-375 flex-1 gap-6 px-4 pb-8 pt-6 sm:px-6 lg:px-8">
         <Sidebar />
         <DashboardContent projects={projects} search={search} />
       </div>

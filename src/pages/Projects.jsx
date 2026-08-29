@@ -1,7 +1,7 @@
 function Projects() {
   return (
     <main className="min-h-screen bg-[#020814] px-4 py-10 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl rounded-[32px] border border-white/10 bg-slate-950/50 p-6 md:p-8">
+      <div className="mx-auto max-w-5xl rounded-4xl border border-white/10 bg-slate-950/50 p-6 md:p-8">
         <h1 className="text-4xl font-black tracking-tight text-white">
           Projects
         </h1>

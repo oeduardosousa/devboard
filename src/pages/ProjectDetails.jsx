@@ -51,7 +51,7 @@ function ProjectDetails({ projects, setProjects }) {
 
   return (
     <main className="min-h-screen bg-[#020814] px-4 py-10 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl rounded-[32px] border border-white/10 bg-slate-950/50 p-6 shadow-[0_0_80px_rgba(168,85,247,0.12)] md:p-8">
+      <div className="mx-auto max-w-5xl rounded-4xl border border-white/10 bg-slate-950/50 p-6 shadow-[0_0_80px_rgba(168,85,247,0.12)] md:p-8">
         <div className="mb-8">
           <span className="inline-flex rounded-full border border-violet-400/50 bg-violet-500/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-violet-200">
             Project

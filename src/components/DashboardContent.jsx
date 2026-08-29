@@ -18,10 +18,10 @@ function DashboardContent({ projects, search }) {
   );
 
   return (
-    <main className="flex-1 rounded-[32px] border border-white/10 bg-slate-950/30 p-5 shadow-[0_0_80px_rgba(168,85,247,0.18)] backdrop-blur-sm md:p-8">
-      <section className="mb-10 rounded-[28px] border border-white/10 bg-gradient-to-r from-[#10192f] via-[#121d31] to-[#1a1026] p-8">
+    <main className="flex-1 rounded-4xl border border-white/10 bg-slate-950/30 p-5 shadow-[0_0_80px_rgba(168,85,247,0.18)] backdrop-blur-sm md:p-8">
+      <section className="mb-10 rounded-3xl border border-white/10 bg-linear-to-r from-[#10192f] via-[#121d31] to-[#1a1026] p-8">
         <span className="inline-flex rounded-full border border-violet-400/50 bg-violet-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-violet-200">
-          DevNova 2024
+          DevBoard 2026
         </span>
         <h1 className="mt-6 max-w-4xl text-4xl font-black leading-none tracking-tight text-white md:text-6xl">
           Project management that coaches you along the way.
