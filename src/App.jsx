@@ -34,13 +34,7 @@ function App() {
 
           <Route
             path="/projects"
-            element={
-              <Projects
-                projects={projects}
-                setProjects={setProjects}
-                search={search}
-              />
-            }
+            element={<Projects projects={projects} setProjects={setProjects} />}
           />
 
           <Route
@@ -50,16 +44,7 @@ function App() {
             }
           />
 
-          <Route
-            path="/tasks"
-            element={
-              <Tasks
-                projects={projects}
-                setProjects={setProjects}
-                search={search}
-              />
-            }
-          />
+          <Route path="/tasks" element={<Tasks projects={projects} />} />
         </Routes>
       </BrowserRouter>
     </div>
