@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import TaskForm from "../components/TaskForm";
 import TaskItem from "../components/TaskItem";
+import Footer from "../components/Footer";
 
 function ProjectDetails({ projects, setProjects }) {
   const navigate = useNavigate();
@@ -88,9 +89,9 @@ function ProjectDetails({ projects, setProjects }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#020814] text-white">
+    <main className="flex min-h-screen flex-col bg-[#020814] text-slate-100">
+      {" "}
       <Header />
-
       <div className="mx-auto flex w-full max-w-375 gap-6 px-4 pb-8 pt-6 sm:px-6 lg:px-8">
         <SideBar />
 
@@ -132,6 +133,7 @@ function ProjectDetails({ projects, setProjects }) {
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
