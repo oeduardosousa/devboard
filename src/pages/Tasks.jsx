@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import TaskItem from "../components/TaskItem";
+import Footer from "../components/Footer";
 
 function Tasks({ projects, setProjects }) {
   const [search, setSearch] = useState("");
@@ -73,12 +74,12 @@ function Tasks({ projects, setProjects }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#020814] text-white">
+    <main className="flex min-h-screen flex-col bg-[#020814] text-white">
+      {" "}
       <Header />
-
-      <div className="mx-auto flex w-full max-w-375 gap-6 px-4 pb-8 pt-6 sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-375 flex-1 gap-6 px-4 pb-8 pt-6 sm:px-6 lg:px-8">
+        {" "}
         <SideBar />
-
         <div className="flex-1 rounded-4xl border border-white/10 bg-slate-950/50 p-6 md:p-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
@@ -119,6 +120,7 @@ function Tasks({ projects, setProjects }) {
           </ul>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

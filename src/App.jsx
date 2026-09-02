@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
@@ -7,7 +8,12 @@ import ProjectDetails from "./pages/ProjectDetails";
 import Tasks from "./pages/Tasks";
 
 function App() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(() => {
+    const savedProjects = localStorage.getItem("projects");
+
+    return savedProjects ? JSON.parse(savedProjects) : [];
+  });
+
   const [search, setSearch] = useState("");
 
   const handleDeleteProject = (projectId) => {
@@ -15,6 +21,10 @@ function App() {
       currentProjects.filter((project) => project.id !== projectId),
     );
   };
+
+  useEffect(() => {
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }, [projects]);
 
   return (
     <div className="min-h-screen bg-[#020814] text-slate-100">
@@ -44,7 +54,10 @@ function App() {
             }
           />
 
-          <Route path="/tasks" element={<Tasks projects={projects} />} />
+          <Route
+            path="/tasks"
+            element={<Tasks projects={projects} setProjects={setProjects} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

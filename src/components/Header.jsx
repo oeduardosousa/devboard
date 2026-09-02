@@ -4,8 +4,8 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-375 items-center justify-center px-4 py-4 sm:px-6 lg:px-8">
+    <header className="devboard-header-enter sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+      <div className="flex w-full items-center justify-center px-4 py-4 sm:px-6 lg:px-8">
         <div
           className="flex cursor-pointer items-center gap-3"
           onClick={() => navigate("/")}

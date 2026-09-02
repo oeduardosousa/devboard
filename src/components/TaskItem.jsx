@@ -10,7 +10,7 @@ function TaskItem({ task, onToggle, onDelete, onEdit }) {
       return;
     }
 
-    onEdit(task.id, editTitle.trim());
+    onEdit(task.id, task.projectId, editTitle.trim());
     setIsEditing(false);
   };
 
@@ -21,7 +21,7 @@ function TaskItem({ task, onToggle, onDelete, onEdit }) {
 
   return (
     <li
-      className={`group flex items-center gap-4 rounded-2xl border px-5 py-4 transition ${
+      className={`devboard-card-enter devboard-hover-lift group flex items-center gap-4 rounded-2xl border px-5 py-4 transition ${
         task.completed
           ? "border-white/5 bg-slate-950/40"
           : "border-white/10 bg-slate-900/60 hover:border-violet-400/30 hover:bg-slate-900"
@@ -98,7 +98,7 @@ function TaskItem({ task, onToggle, onDelete, onEdit }) {
 
         <button
           type="button"
-          onClick={() => onDelete(task.id)}
+          onClick={() => onDelete(task.id, task.projectId)}
           className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 transition hover:bg-red-500/10 hover:text-red-400"
           title="Delete task"
         >

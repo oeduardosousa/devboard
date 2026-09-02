@@ -1,5 +1,156 @@
 @import "tailwindcss";
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
+}
+
+@keyframes devboard-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes devboard-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes devboard-sidebar-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes devboard-link-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.devboard-intro {
+  animation: devboard-fade-up 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.devboard-header-enter {
+  animation: devboard-fade-in 520ms ease-out both;
+}
+
+.devboard-intro-delay-1 {
+  animation-delay: 120ms;
+}
+
+.devboard-intro-delay-2 {
+  animation-delay: 240ms;
+}
+
+.devboard-intro-delay-3 {
+  animation-delay: 360ms;
+}
+
+.devboard-card-enter {
+  animation: devboard-fade-up 580ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.devboard-card-enter:nth-child(2) {
+  animation-delay: 110ms;
+}
+
+.devboard-card-enter:nth-child(3) {
+  animation-delay: 220ms;
+}
+
+.devboard-card-enter:nth-child(4) {
+  animation-delay: 330ms;
+}
+
+.devboard-sidebar-enter {
+  animation: devboard-sidebar-enter 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.devboard-sidebar-link {
+  animation: devboard-link-enter 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
+.devboard-sidebar-link:nth-child(1) {
+  animation-delay: 300ms;
+}
+
+.devboard-sidebar-link:nth-child(2) {
+  animation-delay: 390ms;
+}
+
+.devboard-sidebar-link:nth-child(3) {
+  animation-delay: 480ms;
+}
+
+.devboard-sidebar-link:hover {
+  transform: translateX(2px);
+}
+
+.devboard-hover-lift {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.devboard-hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .devboard-intro,
+  .devboard-header-enter,
+  .devboard-card-enter,
+  .devboard-sidebar-enter,
+  .devboard-sidebar-link {
+    animation: none;
+  }
+
+  .devboard-hover-lift {
+    transition: none;
+  }
+
+  .devboard-hover-lift:hover {
+    transform: none;
+  }
+
+  .devboard-sidebar-link {
+    transition: none;
+  }
+
+  .devboard-sidebar-link:hover {
+    transform: none;
+  }
 }

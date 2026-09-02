@@ -1,7 +1,7 @@
 import SummaryCard from "./SummaryCard";
 import ProjectCard from "./ProjectCard";
 
-function DashboardContent({ projects, search, onDeleteProject }) {
+function DashboardContent({ projects, search, onSearch, onDeleteProject }) {
   const filteredProjects = (projects || []).filter((project) =>
     project.name.toLowerCase().includes(search.toLowerCase()),
   );
@@ -18,14 +18,25 @@ function DashboardContent({ projects, search, onDeleteProject }) {
   );
 
   return (
-    <main className="flex-1 rounded-4xl border border-white/10 bg-slate-950/30 p-5 shadow-[0_0_80px_rgba(168,85,247,0.18)] backdrop-blur-sm md:p-8">
-      <section className="mb-10 rounded-3xl border border-white/10 bg-linear-to-r from-[#10192f] via-[#121d31] to-[#1a1026] p-8">
-        <span className="inline-flex rounded-full border border-violet-400/50 bg-violet-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-violet-200">
-          DevBoard 2026
-        </span>
-        <h1 className="mt-6 max-w-4xl text-4xl font-black leading-none tracking-tight text-white md:text-6xl">
-          Project management that coaches you along the way.
-        </h1>
+    <main className="flex-1 rounded-4xl border border-white/10 bg-slate-950/50 p-6 md:p-8">
+      <section className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1 className="text-4xl font-black tracking-tight text-white">
+            Dashboard
+          </h1>
+
+          <p className="mt-3 text-slate-300">
+            Keep an overview of your projects and track team delivery.
+          </p>
+        </div>
+
+        <input
+          type="text"
+          placeholder="Search projects..."
+          value={search}
+          onChange={(event) => onSearch(event.target.value)}
+          className="rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-white outline-none placeholder:text-slate-500 focus:border-fuchsia-500"
+        />
       </section>
 
       <section className="grid gap-4 md:grid-cols-3">

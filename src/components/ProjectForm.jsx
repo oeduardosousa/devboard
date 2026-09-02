@@ -27,7 +27,7 @@ function ProjectForm({ onCreateProject }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-3xl border border-white/10 bg-slate-900/70 p-5"
+      className="devboard-intro devboard-intro-delay-2 space-y-4 rounded-3xl border border-white/10 bg-slate-900/70 p-5"
     >
       <input
         type="text"

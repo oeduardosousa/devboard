@@ -8,9 +8,9 @@ const navItems = [
 
 function Sidebar() {
   return (
-    <aside className="hidden w-72 shrink-0 rounded-3xl border border-white/10 bg-slate-950/50 p-5 shadow-[0_0_40px_rgba(88,28,135,0.25)] lg:block">
+    <aside className="devboard-sidebar-enter hidden w-72 shrink-0 rounded-3xl border border-white/10 bg-slate-950/50 p-5 shadow-[0_0_40px_rgba(88,28,135,0.25)] lg:block">
       <div className="mb-6 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-violet-600 to-fuchsia-500 text-sm font-bold text-white">
+        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-fuchsia-500 to-violet-500 text-lg font-black text-white shadow-[0_0_30px_rgba(168,85,247,0.8)]">
           D
         </div>
         <div>
@@ -27,7 +27,7 @@ function Sidebar() {
             key={to}
             to={to}
             className={({ isActive }) =>
-              `flex items-center rounded-2xl px-4 py-3 text-sm font-medium transition ${
+              `devboard-sidebar-link flex items-center rounded-2xl px-4 py-3 text-sm font-medium transition ${
                 isActive
                   ? "bg-linear-to-r from-violet-500/20 to-fuchsia-500/20 text-white ring-1 ring-violet-400/50"
                   : "text-slate-300 hover:bg-white/5 hover:text-white"

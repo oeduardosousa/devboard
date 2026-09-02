@@ -24,7 +24,7 @@ function TaskForm({ onCreateTask }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mb-8 rounded-3xl border border-white/10 bg-slate-900/60 p-5 shadow-lg"
+      className="devboard-intro devboard-intro-delay-2 mb-8 rounded-3xl border border-white/10 bg-slate-900/60 p-5 shadow-lg"
     >
       <div className="mb-5">
         <h2 className="text-lg font-semibold text-white">Add a new task</h2>
