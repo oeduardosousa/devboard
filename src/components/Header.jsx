@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MoreVertical, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
@@ -32,6 +32,16 @@ function Header() {
         className="devboard-header-enter sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl"
       >
         <div className="relative mx-auto flex max-w-375 items-center justify-center px-4 py-4 sm:px-6 lg:px-8">
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen(true)}
+            className="absolute left-4 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-900/70 text-slate-300 transition hover:bg-white/10 hover:text-white sm:left-6 lg:hidden"
+            aria-label="Open navigation menu"
+          >
+            <Menu size={22} />
+          </button>
+
           <div
             className="flex cursor-pointer items-center gap-3"
             onClick={() => handleNavigation("/")}
@@ -44,20 +54,13 @@ function Header() {
               Dev<span className="text-fuchsia-400">Board</span>
             </span>
           </div>
-
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen(true)}
-            className="absolute right-4 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-900/70 text-slate-300 transition hover:bg-white/10 hover:text-white sm:right-6 lg:hidden"
-            aria-label="Open navigation menu"
-          >
-            <MoreVertical size={22} />
-          </button>
         </div>
       </header>
 
+      {/* Mobile navigation */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
+          {/* Overlay */}
           <button
             type="button"
             onClick={() => setIsMenuOpen(false)}
@@ -65,7 +68,8 @@ function Header() {
             aria-label="Close navigation menu"
           />
 
-          <aside className="absolute right-0 top-0 flex h-full w-72 flex-col border-l border-white/10 bg-[#020814] p-6 shadow-[-20px_0_60px_rgba(0,0,0,0.4)]">
+          {/* Menu */}
+          <aside className="absolute left-0 top-0 flex h-full w-72 flex-col border-r border-white/10 bg-[#020814] p-6 shadow-[20px_0_60px_rgba(0,0,0,0.4)]">
             <div className="mb-8 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-fuchsia-500 to-violet-500 text-lg font-black text-white shadow-[0_0_30px_rgba(168,85,247,0.8)]">
